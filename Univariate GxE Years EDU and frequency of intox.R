@@ -2,13 +2,12 @@
 # Program: Univariate G x E Intearction
 #  Author: Peter Barr
 #    Date: 10 06 2015 
-#
-# Univariate G x E for Years of Education on Frequency of Intox
+
 # -------|---------|---------|---------|---------|---------|---------|---------|
 
-setwd("~/Desktop/R/FT12/")
+setwd("~/Desktop/R/FT12/data/")
 
-# Load Library
+# Load Library -------------------------------------------------------------------
 require(OpenMx)
 require(psych)
 
@@ -16,8 +15,7 @@ require(psych)
 #NPSOL, SLQSP, CSOLNP
 mxOption( NULL, "Default optimizer", "NPSOL" )
 
-# ------------------------------------------------------------------------------
-# PREPARE DATA
+# PREPARE DATA -------------------------------------------------------------------
 
 # Restructuring data on family instead of twins
 dat <-read.csv('twin_data_FT12_age22.csv', header = T)
@@ -37,7 +35,6 @@ fam$age_2 <- NULL
 twinData <-fam
 describe(twinData, skew=F)
 remove(fam)
-
 
 
 # Select Variables for Analysis
